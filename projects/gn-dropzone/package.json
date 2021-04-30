@@ -16,15 +16,15 @@
     "image"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/peterfreeman/gn-dropzone",
+  "homepage": "https://github.com/gersonc/gn-dropzone",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peterfreeman/gn-dropzone.git"
+    "url": "git+https://github.com/gersonc/gn-dropzone.git"
   },
   "dependencies": {
     "tslib": "^2.0.0"
   },
   "bugs": {
-    "url": "https://github.com/peterfreeman/gn-dropzone/issues"
+    "url": "https://github.com/gersonc/gn-dropzone/issues"
   }
 }
