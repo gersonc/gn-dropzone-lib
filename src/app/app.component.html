@@ -1,0 +1,62 @@
+Default
+<gn-dropzone></gn-dropzone>
+
+<gn-dropzone #drop [id]="'idtest'" [aria-label]="'al-test'" [aria-labelledby]="'alb-test'"
+	(change)="onFilesAdded($event)">
+	<gn-dropzone-label>Drop it, baby!</gn-dropzone-label>
+	<gn-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+		<gn-dropzone-label>{{ f.name }} ({{ f.type }})</gn-dropzone-label>
+	</gn-dropzone-preview>
+</gn-dropzone>
+
+<button (click)="drop.showFileSelector()">Open</button>
+
+<gn-dropzone (change)="onFilesAdded($event)" [disabled]="true" [expandable]="true">
+	<gn-dropzone-label>Drop it like it's hot!</gn-dropzone-label>
+	<gn-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+		<gn-dropzone-label>{{ f.name }} ({{ f.type }})</gn-dropzone-label>
+	</gn-dropzone-preview>
+</gn-dropzone>
+
+<gn-dropzone (change)="onFilesAdded($event)" [multiple]="false" [disableClick]="true">
+	<gn-dropzone-label>Drop it like it's hott!</gn-dropzone-label>
+	<gn-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+		<gn-dropzone-label>{{ f.name }} ({{ f.type }})</gn-dropzone-label>
+	</gn-dropzone-preview>
+</gn-dropzone>
+
+<div class="custom-dropzone" gn-dropzone [accept]="'image/png'" (change)="onFilesAdded($event)">
+	<gn-dropzone-label>
+		<div>
+			<h2>My custom dropzone I</h2>
+		</div>
+	</gn-dropzone-label>
+	<p>P-Element</p>
+	<gn-dropzone-image-preview ngProjectAs="gn-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
+		(removed)="onRemove(f)">
+		<gn-dropzone-label>{{ f.name }} ({{ f.type }})</gn-dropzone-label>
+	</gn-dropzone-image-preview>
+</div>
+
+<div class="custom-dropzone" gn-dropzone [accept]="'video/*'" (change)="onFilesAdded($event)">
+	<gn-dropzone-label>
+		<div>
+			<h2>My custom dropzone II</h2>
+		</div>
+	</gn-dropzone-label>
+	<gn-dropzone-video-preview ngProjectAs="gn-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true"
+		(removed)="onRemove(f)">
+		<gn-dropzone-label>{{ f.name }} ({{ f.type }})</gn-dropzone-label>
+	</gn-dropzone-video-preview>
+</div>
+
+<div class="custom-dropzone" gn-dropzone (change)="onFilesAdded($event)">
+	<gn-dropzone-label>
+		<div>
+			<h2>My custom dropzone III</h2>
+		</div>
+	</gn-dropzone-label>
+	<gn-dropzone-preview *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+		<gn-dropzone-label>{{ f.name }} ({{ f.type }})</gn-dropzone-label>
+	</gn-dropzone-preview>
+</div>

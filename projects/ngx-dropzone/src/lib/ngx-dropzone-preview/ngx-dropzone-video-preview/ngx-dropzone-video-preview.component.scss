@@ -1,0 +1,31 @@
+
+:host {
+	min-width: unset !important;
+	max-width: unset !important;
+	padding: 0 !important;
+
+	&:hover,
+	&:focus {
+    video {
+			opacity: 0.7;
+    }
+
+		gn-dropzone-remove-badge {
+			opacity: 1;
+		}
+	}
+
+	gn-dropzone-remove-badge {
+		opacity: 0;
+	}
+
+	video {
+		max-height: 100%;
+		border-radius: 5px;
+  }
+
+  ::ng-deep gn-dropzone-label {
+		position: absolute;
+		overflow-wrap: break-word;
+	}
+}
