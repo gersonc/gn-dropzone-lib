@@ -21,12 +21,12 @@ $ npm install --save gn-dropzone
 
 ```js
 // in app.module.ts
-import { NgxDropzoneModule } from 'gn-dropzone';
+import { GNdropzoneModule } from 'gn-dropzone';
 
 @NgModule({
   ...
   imports: [
-    NgxDropzoneModule
+    GNdropzoneModule
   ],
   ...
 })
@@ -94,7 +94,7 @@ This component has the following Input properties:
 
 It has the following Output event:
 
-* `(change)`: Emitted when any files were added or rejected. It returns a `NgxDropzoneChangeEvent` with the properties `source: NgxDropzoneComponent`, `addedFiles: File[]` and `rejectedFiles: RejectedFile[]`.
+* `(change)`: Emitted when any files were added or rejected. It returns a `GNdropzoneChangeEvent` with the properties `source: GNdropzoneComponent`, `addedFiles: File[]` and `rejectedFiles: RejectedFile[]`.
 
 The `RejectedFile` extends the native File and adds an optional reason property to tell you why the file was rejected. Its value will be either `'type'` for the wrong acceptance type, `size` if it exceeds the maximum file size or `no_multiple` if multiple is set to false and more than one file is provided.
 

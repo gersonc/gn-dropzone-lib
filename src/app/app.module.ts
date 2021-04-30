@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-// import { NgxDropzoneModule } from 'gn-dropzone';
-import { NgxDropzoneModule } from 'projects/gn-dropzone/src/public_api';
+// import { GNdropzoneModule } from 'gn-dropzone';
+import { GNdropzoneModule } from 'projects/gn-dropzone/src/public_api';
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import { NgxDropzoneModule } from 'projects/gn-dropzone/src/public_api';
   ],
   imports: [
     BrowserModule,
-    NgxDropzoneModule
+    GNdropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]

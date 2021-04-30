@@ -1,10 +1,10 @@
 import { Component, OnInit, EventEmitter, Output, Input, ViewChild, ContentChildren, QueryList, HostBinding, HostListener, Self, ElementRef } from '@angular/core';
-import { NgxDropzoneService, FileSelectResult } from '../gn-dropzone.service';
+import { GNdropzoneService, FileSelectResult } from '../gn-dropzone.service';
 import { coerceBooleanProperty, coerceNumberProperty } from '../helpers';
-import { NgxDropzonePreviewComponent } from '../gn-dropzone-preview/gn-dropzone-preview.component';
+import { GNdropzonePreviewComponent } from '../gn-dropzone-preview/gn-dropzone-preview.component';
 
-export interface NgxDropzoneChangeEvent {
-  source: NgxDropzoneComponent;
+export interface GNdropzoneChangeEvent {
+  source: GNdropzoneComponent;
   addedFiles: File[];
   rejectedFiles: File[];
 }
@@ -13,17 +13,17 @@ export interface NgxDropzoneChangeEvent {
   selector: 'gn-dropzone, [gn-dropzone]',
   templateUrl: './gn-dropzone.component.html',
   styleUrls: ['./gn-dropzone.component.scss'],
-  providers: [NgxDropzoneService]
+  providers: [GNdropzoneService]
 })
-export class NgxDropzoneComponent {
+export class GNdropzoneComponent {
 
   constructor(
-    @Self() private service: NgxDropzoneService
+    @Self() private service: GNdropzoneService
   ) { }
 
   /** A list of the content-projected preview children. */
-  @ContentChildren(NgxDropzonePreviewComponent, { descendants: true })
-  _previewChildren: QueryList<NgxDropzonePreviewComponent>;
+  @ContentChildren(GNdropzonePreviewComponent, { descendants: true })
+  _previewChildren: QueryList<GNdropzonePreviewComponent>;
 
   get _hasPreviews(): boolean {
     return !!this._previewChildren.length;
@@ -33,7 +33,7 @@ export class NgxDropzoneComponent {
   @ViewChild('fileInput', { static: true }) _fileInput: ElementRef;
 
   /** Emitted when any files were added or rejected. */
-  @Output() readonly change = new EventEmitter<NgxDropzoneChangeEvent>();
+  @Output() readonly change = new EventEmitter<GNdropzoneChangeEvent>();
 
   /** Set the accepted file types. Defaults to '*'. */
   @Input() accept = '*';

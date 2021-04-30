@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding, Input } from '@angular/core';
-import { NgxDropzonePreviewComponent } from '../gn-dropzone-preview.component';
+import { GNdropzonePreviewComponent } from '../gn-dropzone-preview.component';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
@@ -13,12 +13,12 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
   styleUrls: ['./gn-dropzone-image-preview.component.scss'],
   providers: [
     {
-      provide: NgxDropzonePreviewComponent,
-      useExisting: NgxDropzoneImagePreviewComponent
+      provide: GNdropzonePreviewComponent,
+      useExisting: GNdropzoneImagePreviewComponent
     }
   ]
 })
-export class NgxDropzoneImagePreviewComponent extends NgxDropzonePreviewComponent implements OnInit {
+export class GNdropzoneImagePreviewComponent extends GNdropzonePreviewComponent implements OnInit {
 
   constructor(
     sanitizer: DomSanitizer

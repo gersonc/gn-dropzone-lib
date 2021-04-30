@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NgxDropzonePreviewComponent } from '../gn-dropzone-preview.component';
+import { GNdropzonePreviewComponent } from '../gn-dropzone-preview.component';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -15,12 +15,12 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./gn-dropzone-video-preview.component.scss'],
   providers: [
     {
-      provide: NgxDropzonePreviewComponent,
-      useExisting: NgxDropzoneVideoPreviewComponent
+      provide: GNdropzonePreviewComponent,
+      useExisting: GNdropzoneVideoPreviewComponent
     }
   ]
 })
-export class NgxDropzoneVideoPreviewComponent extends NgxDropzonePreviewComponent implements OnInit, OnDestroy {
+export class GNdropzoneVideoPreviewComponent extends GNdropzonePreviewComponent implements OnInit, OnDestroy {
 
   constructor(
     sanitizer: DomSanitizer

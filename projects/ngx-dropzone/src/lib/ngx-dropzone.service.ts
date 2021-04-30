@@ -24,7 +24,7 @@ export type RejectReason = 'type' | 'size' | 'no_multiple';
  * addedFiles array, otherwise in the rejectedFiles array.
  */
 @Injectable()
-export class NgxDropzoneService {
+export class GNdropzoneService {
 
 	parseFileList(files: FileList, accept: string, maxFileSize: number, multiple: boolean): FileSelectResult {
 
