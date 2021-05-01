@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 // import { GNdropzoneModule } from 'gn-dropzone';
-import { GNdropzoneModule } from 'projects/gn-dropzone/src/public_api';
+import { GnDropzoneModule } from 'projects/gn-dropzone/src/public_api';
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import { GNdropzoneModule } from 'projects/gn-dropzone/src/public_api';
   ],
   imports: [
     BrowserModule,
-    GNdropzoneModule
+    GnDropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]
