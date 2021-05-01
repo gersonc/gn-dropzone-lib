@@ -3,6 +3,7 @@ import { GnDropzonePreviewComponent } from '../gn-dropzone-preview.component';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'gn-dropzone-video-preview',
   template: `
     <video *ngIf="sanitizedVideoSrc" controls (click)="$event.stopPropagation()">

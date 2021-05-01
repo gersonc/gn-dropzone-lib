@@ -1,3 +1,4 @@
+/* tslint:disable:prefer-const */
 import { TestBed, inject } from '@angular/core/testing';
 import { GnDropzoneService } from './gn-dropzone.service';
 
@@ -28,7 +29,7 @@ function getRandomFileTypes(): File[] {
     new File(['RandomStringContentToSimulateFileSize'], 'myFile.jpg', { type: 'image/jpeg' }),
     new File(['RandomStringContentToSimulateFileSize'], 'myFile.png', { type: 'image/png' }),
     new File(['RandomStringContentToSimulateBiggerFileSizeForUnitTest'], 'myFile.mp4', { type: 'video/mp4' }),
-  ]
+  ];
 }
 
 function fileWithType(type: string): File {

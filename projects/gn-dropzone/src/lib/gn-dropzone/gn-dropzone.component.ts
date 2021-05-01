@@ -1,4 +1,6 @@
-import { Component, OnInit, EventEmitter, Output, Input, ViewChild, ContentChildren, QueryList, HostBinding, HostListener, Self, ElementRef } from '@angular/core';
+/* tslint:disable:no-input-rename */
+import { Component, OnInit, EventEmitter, Output, Input, ViewChild, ContentChildren,
+  QueryList, HostBinding, HostListener, Self, ElementRef } from '@angular/core';
 import { GnDropzoneService, FileSelectResult } from '../gn-dropzone.service';
 import { coerceBooleanProperty, coerceNumberProperty } from '../helpers';
 import { GnDropzonePreviewComponent } from '../gn-dropzone-preview/gn-dropzone-preview.component';
@@ -10,6 +12,7 @@ export interface GnDropzoneChangeEvent {
 }
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'gn-dropzone, [gn-dropzone]',
   templateUrl: './gn-dropzone.component.html',
   styleUrls: ['./gn-dropzone.component.scss'],
@@ -82,7 +85,7 @@ export class GnDropzoneComponent {
   set expandable(value: boolean) {
     this._expandable = coerceBooleanProperty(value);
   }
-  private _expandable: boolean = false;
+  private _expandable = false;
 
   /** Open the file selector on click. */
   @Input()
@@ -109,7 +112,7 @@ export class GnDropzoneComponent {
   _onClick() {
     if (!this.disableClick) {
       this.showFileSelector();
-    } 
+    }
   }
 
   @HostListener('dragover', ['$event'])
@@ -137,7 +140,7 @@ export class GnDropzoneComponent {
     this._isHovered = false;
     this.handleFileDrop(event.dataTransfer.files);
   }
-  
+
   showFileSelector() {
     if (!this.disabled) {
       (this._fileInput.nativeElement as HTMLInputElement).click();

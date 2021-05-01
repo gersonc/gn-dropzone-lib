@@ -3,6 +3,7 @@ import { GnDropzonePreviewComponent } from '../gn-dropzone-preview.component';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'gn-dropzone-image-preview',
   template: `
     <img [src]="imageSrc" />
