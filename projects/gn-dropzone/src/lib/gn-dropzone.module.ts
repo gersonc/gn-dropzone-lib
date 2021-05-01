@@ -1,31 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GNdropzoneLabelDirective } from './gn-dropzone-label.directive';
-import { GNdropzonePreviewComponent } from './gn-dropzone-preview/gn-dropzone-preview.component';
-import { GNdropzoneComponent } from './gn-dropzone/gn-dropzone.component';
-import { GNdropzoneImagePreviewComponent } from './gn-dropzone-preview/gn-dropzone-image-preview/gn-dropzone-image-preview.component';
-import { GNdropzoneRemoveBadgeComponent } from './gn-dropzone-preview/gn-dropzone-remove-badge/gn-dropzone-remove-badge.component';
-import { GNdropzoneVideoPreviewComponent } from './gn-dropzone-preview/gn-dropzone-video-preview/gn-dropzone-video-preview.component';
+import { GnDropzoneLabelDirective } from './gn-dropzone-label.directive';
+import { GnDropzonePreviewComponent } from './gn-dropzone-preview/gn-dropzone-preview.component';
+import { GnDropzoneComponent } from './gn-dropzone/gn-dropzone.component';
+import { GnDropzoneImagePreviewComponent } from './gn-dropzone-preview/gn-dropzone-image-preview/gn-dropzone-image-preview.component';
+import { GnDropzoneRemoveBadgeComponent } from './gn-dropzone-preview/gn-dropzone-remove-badge/gn-dropzone-remove-badge.component';
+import { GnDropzoneVideoPreviewComponent } from './gn-dropzone-preview/gn-dropzone-video-preview/gn-dropzone-video-preview.component';
 
 @NgModule({
 	imports: [
 		CommonModule
 	],
 	declarations: [
-		GNdropzoneComponent,
-		GNdropzoneLabelDirective,
-		GNdropzonePreviewComponent,
-		GNdropzoneImagePreviewComponent,
-		GNdropzoneRemoveBadgeComponent,
-		GNdropzoneVideoPreviewComponent,
+		GnDropzoneComponent,
+		GnDropzoneLabelDirective,
+		GnDropzonePreviewComponent,
+		GnDropzoneImagePreviewComponent,
+		GnDropzoneRemoveBadgeComponent,
+		GnDropzoneVideoPreviewComponent,
 	],
 	exports: [
-		GNdropzoneComponent,
-		GNdropzoneLabelDirective,
-		GNdropzonePreviewComponent,
-		GNdropzoneImagePreviewComponent,
-		GNdropzoneRemoveBadgeComponent,
-		GNdropzoneVideoPreviewComponent,
+		GnDropzoneComponent,
+		GnDropzoneLabelDirective,
+		GnDropzonePreviewComponent,
+		GnDropzoneImagePreviewComponent,
+		GnDropzoneRemoveBadgeComponent,
+		GnDropzoneVideoPreviewComponent,
 	]
 })
-export class GNdropzoneModule { }
+export class GnDropzoneModule { }

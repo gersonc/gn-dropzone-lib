@@ -1,10 +1,10 @@
 import { Component, OnInit, EventEmitter, Output, Input, ViewChild, ContentChildren, QueryList, HostBinding, HostListener, Self, ElementRef } from '@angular/core';
-import { GNdropzoneService, FileSelectResult } from '../gn-dropzone.service';
+import { GnDropzoneService, FileSelectResult } from '../gn-dropzone.service';
 import { coerceBooleanProperty, coerceNumberProperty } from '../helpers';
-import { GNdropzonePreviewComponent } from '../gn-dropzone-preview/gn-dropzone-preview.component';
+import { GnDropzonePreviewComponent } from '../gn-dropzone-preview/gn-dropzone-preview.component';
 
-export interface GNdropzoneChangeEvent {
-  source: GNdropzoneComponent;
+export interface GnDropzoneChangeEvent {
+  source: GnDropzoneComponent;
   addedFiles: File[];
   rejectedFiles: File[];
 }
@@ -13,17 +13,17 @@ export interface GNdropzoneChangeEvent {
   selector: 'gn-dropzone, [gn-dropzone]',
   templateUrl: './gn-dropzone.component.html',
   styleUrls: ['./gn-dropzone.component.scss'],
-  providers: [GNdropzoneService]
+  providers: [GnDropzoneService]
 })
-export class GNdropzoneComponent {
+export class GnDropzoneComponent {
 
   constructor(
-    @Self() private service: GNdropzoneService
+    @Self() private service: GnDropzoneService
   ) { }
 
   /** A list of the content-projected preview children. */
-  @ContentChildren(GNdropzonePreviewComponent, { descendants: true })
-  _previewChildren: QueryList<GNdropzonePreviewComponent>;
+  @ContentChildren(GnDropzonePreviewComponent, { descendants: true })
+  _previewChildren: QueryList<GnDropzonePreviewComponent>;
 
   get _hasPreviews(): boolean {
     return !!this._previewChildren.length;
@@ -33,7 +33,7 @@ export class GNdropzoneComponent {
   @ViewChild('fileInput', { static: true }) _fileInput: ElementRef;
 
   /** Emitted when any files were added or rejected. */
-  @Output() readonly change = new EventEmitter<GNdropzoneChangeEvent>();
+  @Output() readonly change = new EventEmitter<GnDropzoneChangeEvent>();
 
   /** Set the accepted file types. Defaults to '*'. */
   @Input() accept = '*';

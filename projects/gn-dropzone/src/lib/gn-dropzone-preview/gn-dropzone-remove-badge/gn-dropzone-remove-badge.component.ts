@@ -10,4 +10,4 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./gn-dropzone-remove-badge.component.scss']
 })
-export class GNdropzoneRemoveBadgeComponent { }
+export class GnDropzoneRemoveBadgeComponent { }

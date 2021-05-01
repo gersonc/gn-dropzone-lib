@@ -16,7 +16,7 @@ enum KEY_CODE {
 	`,
 	styleUrls: ['./gn-dropzone-preview.component.scss']
 })
-export class GNdropzonePreviewComponent {
+export class GnDropzonePreviewComponent {
 
 	constructor(
 		protected sanitizer: DomSanitizer

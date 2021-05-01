@@ -1,5 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { GNdropzoneService } from './gn-dropzone.service';
+import { GnDropzoneService } from './gn-dropzone.service';
 
 // Mockup FileList class for unit tests
 class MockFileList implements FileList {
@@ -39,18 +39,18 @@ function fileWithName(name: string): File {
   return new File(['anyFileBits'], name);
 }
 
-describe('GNdropzoneService', () => {
+describe('GnDropzoneService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GNdropzoneService]
+      providers: [GnDropzoneService]
     });
   });
 
-  it('should be created', inject([GNdropzoneService], (service: GNdropzoneService) => {
+  it('should be created', inject([GnDropzoneService], (service: GnDropzoneService) => {
     expect(service).toBeTruthy();
   }));
 
-  it('should return all files in the default configuration', inject([GNdropzoneService], (service: GNdropzoneService) => {
+  it('should return all files in the default configuration', inject([GnDropzoneService], (service: GnDropzoneService) => {
     let fileList = new MockFileList(getRandomFileTypes());
 
     const result = service.parseFileList(fileList, '*', null, true);
@@ -59,7 +59,7 @@ describe('GNdropzoneService', () => {
     expect(result.rejectedFiles.length).toEqual(0);
   }));
 
-  it('should filter for accepted type wildcard', inject([GNdropzoneService], (service: GNdropzoneService) => {
+  it('should filter for accepted type wildcard', inject([GnDropzoneService], (service: GnDropzoneService) => {
     const jpegFile = fileWithType('image/jpeg');
     const pngFile = fileWithType('image/png');
     const mp4File = fileWithType('video/mp4');
@@ -72,7 +72,7 @@ describe('GNdropzoneService', () => {
     expect(result.rejectedFiles).toEqual([mp4File]);
   }));
 
-  it('should filter for multiple accepted types', inject([GNdropzoneService], (service: GNdropzoneService) => {
+  it('should filter for multiple accepted types', inject([GnDropzoneService], (service: GnDropzoneService) => {
     const jpegFile = fileWithType('image/jpeg');
     const pngFile = fileWithType('image/png');
     const mp4File = fileWithType('video/mp4');
@@ -85,7 +85,7 @@ describe('GNdropzoneService', () => {
     expect(result.rejectedFiles).toEqual([jpegFile]);
   }));
 
-  it('should filter for accepted file extension and type', inject([GNdropzoneService], (service: GNdropzoneService) => {
+  it('should filter for accepted file extension and type', inject([GnDropzoneService], (service: GnDropzoneService) => {
     const fileWithJpegType = fileWithType('image/jpeg');
     const fileWithPngType = fileWithType('image/png');
     const fileWithTxtExtension = fileWithName('text.txt');
@@ -98,7 +98,7 @@ describe('GNdropzoneService', () => {
     expect(result.rejectedFiles).toEqual([fileWithJpegType]);
   }));
 
-  it('should filter for accepted file extension ignoring case', inject([GNdropzoneService], (service: GNdropzoneService) => {
+  it('should filter for accepted file extension ignoring case', inject([GnDropzoneService], (service: GnDropzoneService) => {
     const txtFile = fileWithName('text.txt');
     let fileList = new MockFileList([txtFile]);
     const accept = '.TXT';
@@ -108,7 +108,7 @@ describe('GNdropzoneService', () => {
     expect(result.addedFiles).toEqual([txtFile]);
   }));
 
-  it('should filter for accepted file type ignoring case', inject([GNdropzoneService], (service: GNdropzoneService) => {
+  it('should filter for accepted file type ignoring case', inject([GnDropzoneService], (service: GnDropzoneService) => {
     const txtFile = fileWithType('plain/text');
     let fileList = new MockFileList([txtFile]);
     const accept = 'PLAIN/TEXT';
@@ -118,7 +118,7 @@ describe('GNdropzoneService', () => {
     expect(result.addedFiles).toEqual([txtFile]);
   }));
 
-  it('should filter for maximum file size', inject([GNdropzoneService], (service: GNdropzoneService) => {
+  it('should filter for maximum file size', inject([GnDropzoneService], (service: GnDropzoneService) => {
     let fileList = new MockFileList(getRandomFileTypes());
 
     const result = service.parseFileList(fileList, '*', 50, true);
@@ -127,7 +127,7 @@ describe('GNdropzoneService', () => {
     expect(result.rejectedFiles.length).toEqual(2);
   }));
 
-  it('should handle single-selection mode', inject([GNdropzoneService], (service: GNdropzoneService) => {
+  it('should handle single-selection mode', inject([GnDropzoneService], (service: GnDropzoneService) => {
     let fileList = new MockFileList(getRandomFileTypes());
 
     const result = service.parseFileList(fileList, '*', null, false);
